@@ -2,9 +2,9 @@
 Opinionated development style guide for Typescript Angular 1.5 by YOPA's Dev Team
 
 ## Table of contents
-1. App folder structure
-1. Module folder structure
-1. File naming convention
+1. [App folder structure](#app-folder-structure)
+1. [Module folder structure](#module-folder-structure)
+1. [File naming convention](#file-naming-convention)
 
 
 ## App folder structure
