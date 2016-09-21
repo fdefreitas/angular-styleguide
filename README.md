@@ -30,19 +30,15 @@ App structure depicted, with most important files and folders for reference.
     + run/
     + sass/
     + app.ts
-- assets/
 - docs/
 - public/
-- reports/
 - typings/
 - .gitignore
 - gulpfile.js
 - index.php
 - karma.conf.js
 - main.d.ts
-- meta.php
 - package.json
-- yconfig.json
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -128,8 +124,7 @@ Angular modules' configuration and run methods:
 
 ## Variable declarations
 
-- Prefer `let` or `const` over `var`, since they have block-scoping 
-and are not visible outside of their containing block 
+- Prefer `let` or `const` over `var`, since they have block-scoping, which means they are not visible outside of their containing block 
 - Use `const` when the value of the variable is not meant to change, like a 
 resource id or an attribute name, this way the variable can't get reassigned by mistake.
 - Specify the variable type when you declare it, and avoid the usage of `any`. 
@@ -289,7 +284,7 @@ let collection: number[];
 
 // allowed
 class NewComponentController {
-    static $inject: Array<string`>` = [...];
+    static $inject: Array<string> = [...];
     // or
     static $inject: string[] = [...];
 }
@@ -345,8 +340,8 @@ function sayHi(name) {
 - Use `===` and `!==` over `==` and `!=`
 - Conditional statements like `if()`, `ng-if`, `ng-show`, `ng-hide` and `ng-required` evaluate their expression using coercion, which follows these rules:
 	+ **Objects** evaluate to `true`
-	+ **Undefined** evaluates to `false`
-	+ **Null** evaluates to `false`
+	+ `undefined` evaluates to `false`
+	+ `null` evaluates to `false`
 	+ **Booleans** evaluate to `<the value of the boolean>`
 	+ **Numbers** evaluate to `false` if `+0`, `-0`, or `NaN`, otherwise `true`
 	+ **Strings** evaluate to `false` if an empty string `''`, otherwise `true`
