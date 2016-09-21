@@ -63,9 +63,9 @@ The spec folder contains files mirroring the component files being tested, do no
     + services/
     + spec/
     + views/
-    + components/
-    + directives/
-    + templates/
+	    + components/
+	    + directives/
+	    + templates/
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -345,7 +345,8 @@ function sayHi(name) {
 	+ **Booleans** evaluate to `<the value of the boolean>`
 	+ **Numbers** evaluate to `false` if `+0`, `-0`, or `NaN`, otherwise `true`
 	+ **Strings** evaluate to `false` if an empty string `''`, otherwise `true`
-- 
+
+For [more info]()
 
 ```js
 // avoid
@@ -369,8 +370,7 @@ if(!isLoading){
 - Write documentation for exposed methods of Services on top of 
 the interface method definition.
 - For `private` methods they can be on top of the method.
-- Avoid single line comments. They're usually a code smell.
-- Use single line comments only for TODO and FIXME.
+- Avoid single line comments, except for TODO and FIXME tags. They're usually a code smell.
 
 **[⬆ back to top](#table-of-contents)**
 
