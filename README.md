@@ -45,7 +45,7 @@ App structure depicted, with most important files and folders for reference.
 
 ## Module folder structure
 
-The modules follow the fractal hierarchy approach ([More info](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/edit))
+The modules follow the fractal hierarchy approach, proposed by Google for projects using Angular and Polymer, (For more info check [Angular Best Practice for App Structure](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/edit))
 The `interfaces` folder contains only a `instances.d.ts` file for instances that represent object structures. 
 Interfaces for angular components (services, components, directives, etc) should be on the top of the original component file.
 
@@ -179,7 +179,6 @@ For more information:
 **[⬆ back to top](#table-of-contents)**
 
 ## Method definitions
-
 
 
 
@@ -346,7 +345,7 @@ function sayHi(name) {
 	+ **Numbers** evaluate to `false` if `+0`, `-0`, or `NaN`, otherwise `true`
 	+ **Strings** evaluate to `false` if an empty string `''`, otherwise `true`
 
-For [more info]()
+For more info on the way Javascript handles coercion: [Truth, Equality and Javascript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108)
 
 ```js
 // avoid
