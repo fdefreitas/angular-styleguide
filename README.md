@@ -98,6 +98,7 @@ The spec folder contains files mirroring the component files being tested, do no
 - Services: `<camelCaseName>.service.<ext>`
 
 ### HTML Files [.html]
+Templates should be used only for custom html for third party plugins of reusable "components" outside of angular's symbol scope, like modals.
 - Components: `<ypComponentName>.component.html`
 - Directives: `<ypDirectiveName>.directive.html`
 - Layout: `<fileName>.html`
