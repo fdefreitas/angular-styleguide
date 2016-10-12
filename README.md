@@ -15,6 +15,12 @@ Based on:
 1. [Naming](#naming)
 1. [Method definitions](#method-definitions)
 1. [Types](#types)
+1. [Components](#components)
+1. [Directives](#directives)
+1. [Factories](#factories)
+1. [Services](#services)
+1. [ui-router States](#ui-router-states)
+1. [Design principles](#design-principles)
 1. [Comments and documentation](#comments-and-documentation)
 1. [Blocks](#blocks)
 
@@ -98,7 +104,6 @@ The spec folder contains files mirroring the component files being tested, do no
 - Modals: `<fileName>.modal.html`
 - Templates: `<fileName>.template.html`
 - Views: `<module>.<fileName>.html`
-- Views (after refactoring): `<fileName>.html`
 
 ### SASS Files [.scss]
 - `<file_name>.scss`
@@ -180,7 +185,15 @@ For more information:
 
 ## Method definitions
 
+- Define small methods that have a single responsibility, like mapping an address to an object.
+- Follow the dependency injection principle, so it receives everything it needs, like an `id`, a `product` or `user` object, to work via its parameters, apart from Services.
 
+Why? 
+- That makes them reusable
+- They are easier to read
+- They are easier to test
+- They can be used inside of bigger methods
+- Avoids the need to kno
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -191,11 +204,10 @@ For more information:
 - Use PascalCase/UpperCamelCase for the class name
 - Place members on top of `$inject` and the constructor
 - Place `public` members on top of all other members
-- Place `public` methods right under the `constructor` method
-- Place `private` methods on the bottom of the class
 
 ### Function, methods 
-
+- Place `public` methods right under the `constructor` method
+- Place `private` methods on the bottom of the class
 - Avoid functions of more than 75 lines of code. Long functions are usually a code smell 
 - Name methods with verbs that explain what they're doing, like **unbind**, 
 **create**, **update**, **retrieve**
