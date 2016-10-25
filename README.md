@@ -209,6 +209,9 @@ Why?
 ### Function, methods 
 - Place `public` methods right under the `constructor` method
 - Place `private` methods on the bottom of the class
+- Don't do initialization logic directly in the constructor, wrap it in a private method 
+and invoke it from there. Why? Because that way it's easier to understand  what's being done 
+in the constructor and also helps making the file easier to navigate.
 - Avoid functions of more than 75 lines of code. Long functions are usually a code smell 
 - Name methods with verbs that explain what they're doing, like **unbind**, 
 **create**, **update**, **retrieve**
