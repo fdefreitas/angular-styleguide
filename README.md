@@ -23,6 +23,7 @@ Based on:
 1. [Design principles](#design-principles)
 1. [Comments and documentation](#comments-and-documentation)
 1. [Blocks](#blocks)
+1. [Angular Components](#angular-components)
 
 
 ## App folder structure
@@ -414,4 +415,62 @@ for(let index = 0; index < collection.length; index++ ){
     console.log("This is my index", index);
 }
 ```
+**[⬆ back to top](#table-of-contents)**
+
+## Angular Components
+
+  The following refers to Angular's set of components and not just the new component component (Yeah, a bit confusing right?)
+
+### Controllers
+
+- Controller classes (or functions) should be named `<controllerName>Controller`, avoid using `Ctrl `or other abbreviations 
+for the naming
+
+### Components
+
+- Component classes (or functions) should be named `yp<ComponentName>Component`, avoid using `Cmp` or other abbreviations 
+for the naming. The `yp` prefix helps identify our own filters from third parties'
+
+### Directives
+
+- Directive classes (or functions) should be named `yp<DirectiveName>Directive`, avoid using `Dir`,`Drtv` or other abbreviations 
+for the naming. The `yp` prefix helps identify our own filters from third parties'
+
+### Filters
+
+- Filter classes (or functions) should be named `yp<FilterName>Filter` and inyected into angular 
+as `ypFilterName` with no `Filter` suffix. The `yp` prefix helps identify our own filters from third parties' 
+
+### Services, Factories, Constants
+
+- Services and factories classes (or functions) don't need to have the `Service` suffix, use a name that explicitely 
+states the service/factory function instead.
+
+```js
+// avoid
+class ViewingService {
+  //...
+}
+
+// do
+class Viewing {
+  //...
+}
+
+// do
+class ViewingHelperService {
+  //...
+}
+
+// do
+class ViewingManagerService {
+  //...
+}
+
+```
+
+### Providers
+
+- Provider classes (or functions) should be named `<providerName>Provider`.
+
 **[⬆ back to top](#table-of-contents)**
