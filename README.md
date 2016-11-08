@@ -445,7 +445,7 @@ angular.module('<moduleName>').controller('controllerNameController', controller
 
 - Component classes (or functions) should be named `yp<ComponentName>Component` and inyected into angular 
 as `yp<ComponentName>` with no `Component` suffix., avoid using `Cmp` or other abbreviations 
-for the naming. The `yp` prefix helps identify our own filters from third parties'.
+for the naming. The `yp` prefix helps identify our own components from third parties'.
 
 ```js
 // avoid
@@ -465,7 +465,7 @@ angular.module('<moduleName>').controller('ypComponentName', ypComponentNameComp
 ### Directives
 
 - Directive classes (or functions) should be named `yp<DirectiveName>Directive`, avoid using `Dir`,`Drtv` or other abbreviations 
-for the naming. The `yp` prefix helps identify our own filters from third parties'.
+for the naming. The `yp` prefix helps identify our own directives from third parties'.
 
 ```js
 // avoid
