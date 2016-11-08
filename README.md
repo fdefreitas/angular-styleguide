@@ -424,22 +424,83 @@ for(let index = 0; index < collection.length; index++ ){
 ### Controllers
 
 - Controller classes (or functions) should be named `<controllerName>Controller`, avoid using `Ctrl `or other abbreviations 
-for the naming
+for the naming.
+
+```js
+// avoid
+class controllerNameCtrl {
+  //...
+}
+angular.module('<moduleName>').controller('controllerNameCtrl', controllerNameCtrl);
+
+// do
+class controllerNameController {
+  //...
+}
+angular.module('<moduleName>').controller('controllerNameController', controllerNameController);
+
+```
 
 ### Components
 
-- Component classes (or functions) should be named `yp<ComponentName>Component`, avoid using `Cmp` or other abbreviations 
-for the naming. The `yp` prefix helps identify our own filters from third parties'
+- Component classes (or functions) should be named `yp<ComponentName>Component` and inyected into angular 
+as `yp<ComponentName>` with no `Component` suffix., avoid using `Cmp` or other abbreviations 
+for the naming. The `yp` prefix helps identify our own filters from third parties'.
+
+```js
+// avoid
+class componentNameCmp {
+  //...
+}
+angular.module('<moduleName>').controller('componentName', componentNameCmp);
+
+// do
+class ypComponentNameComponent {
+  //...
+}
+angular.module('<moduleName>').controller('ypComponentName', ypComponentNameComponent);
+
+```
 
 ### Directives
 
 - Directive classes (or functions) should be named `yp<DirectiveName>Directive`, avoid using `Dir`,`Drtv` or other abbreviations 
-for the naming. The `yp` prefix helps identify our own filters from third parties'
+for the naming. The `yp` prefix helps identify our own filters from third parties'.
+
+```js
+// avoid
+class directiveNameDir {
+  //...
+}
+angular.module('<moduleName>').controller('directiveName', directiveNameDir);
+
+// do
+class ypDirectiveNameDirective {
+  //...
+}
+angular.module('<moduleName>').controller('ypDirectiveName', ypDirectiveNameDirective);
+
+```
 
 ### Filters
 
 - Filter classes (or functions) should be named `yp<FilterName>Filter` and inyected into angular 
-as `ypFilterName` with no `Filter` suffix. The `yp` prefix helps identify our own filters from third parties' 
+as `yp<FilterName>` with no `Filter` suffix. The `yp` prefix helps identify our own filters from third parties'.
+
+```js
+// avoid
+class filterName {
+  //...
+}
+angular.module('<moduleName>').controller('filterName', filterName);
+
+// do
+class ypFilterNameFilter {
+  //...
+}
+angular.module('<moduleName>').controller('ypFilterName', ypFilterNameFilter);
+
+```
 
 ### Services, Factories, Constants
 
