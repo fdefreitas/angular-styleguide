@@ -423,7 +423,7 @@ for(let index = 0; index < collection.length; index++ ){
 
 ### Controllers
 
-- Controller classes (or functions) should be named `<controllerName>Controller`, avoid using `Ctrl `or other abbreviations 
+- Controller classes (or functions) should be named `<controllerName>Controller`, avoid using `Ctrl` or other abbreviations 
 for the naming.
 
 ```js
@@ -464,7 +464,7 @@ angular.module('<moduleName>').controller('ypComponentName', ypComponentNameComp
 
 ### Directives
 
-- Directive classes (or functions) should be named `yp<DirectiveName>Directive`, avoid using `Dir`,`Drtv` or other abbreviations 
+- Directive classes (or functions) should be named `yp<DirectiveName>Directive`, avoid using `Dir`, `Drtv` or other abbreviations 
 for the naming. The `yp` prefix helps identify our own directives from third parties'.
 
 ```js
