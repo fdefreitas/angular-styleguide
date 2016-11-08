@@ -452,13 +452,13 @@ for the naming. The `yp` prefix helps identify our own components from third par
 class componentNameCmp {
   //...
 }
-angular.module('<moduleName>').controller('componentName', componentNameCmp);
+angular.module('<moduleName>').component('componentName', componentNameCmp);
 
 // do
 class ypComponentNameComponent {
   //...
 }
-angular.module('<moduleName>').controller('ypComponentName', ypComponentNameComponent);
+angular.module('<moduleName>').component('ypComponentName', ypComponentNameComponent);
 
 ```
 
@@ -472,13 +472,13 @@ for the naming. The `yp` prefix helps identify our own directives from third par
 class directiveNameDir {
   //...
 }
-angular.module('<moduleName>').controller('directiveName', directiveNameDir);
+angular.module('<moduleName>').directive('directiveName', () => new directiveNameDir());
 
 // do
 class ypDirectiveNameDirective {
   //...
 }
-angular.module('<moduleName>').controller('ypDirectiveName', ypDirectiveNameDirective);
+angular.module('<moduleName>').directive('ypDirectiveName', () => new ypDirectiveNameDirective());
 
 ```
 
@@ -492,13 +492,13 @@ as `yp<FilterName>` with no `Filter` suffix. The `yp` prefix helps identify our 
 class filterName {
   //...
 }
-angular.module('<moduleName>').controller('filterName', filterName);
+angular.module('<moduleName>').filter('filterName', filterName);
 
 // do
 class ypFilterNameFilter {
   //...
 }
-angular.module('<moduleName>').controller('ypFilterName', ypFilterNameFilter);
+angular.module('<moduleName>').filter('ypFilterName', ypFilterNameFilter);
 
 ```
 
