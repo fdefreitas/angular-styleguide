@@ -24,6 +24,7 @@ Based on:
 1. [Comments and documentation](#comments-and-documentation)
 1. [Blocks](#blocks)
 1. [Angular Components](#angular-components)
+1. [Specs](#specs)
 
 
 ## App folder structure
@@ -85,7 +86,6 @@ The spec folder contains files mirroring the component files being tested, do no
 - Config: `<moduleName>.config.<ext>`
 - Run: `<moduleName>.run.<ext>`
 - Routes: `<moduleName>.routes.<ext>`
-- Spec: `<originalFileName>.spec.<ext>`
 
 #### Module files:
 - Constants: `<camelCaseName>.constant.<ext>`
@@ -98,8 +98,16 @@ The spec folder contains files mirroring the component files being tested, do no
 - Interfaces: `instances.d.ts`
 - Services: `<camelCaseName>.service.<ext>`
 
+#### Spec files:
+Spec files should be named just like the module component that it contains the tests for, appending `.spec` to the file 
+name before its extension. This to avoid confussion and possible duplicated files on a git merge when using different file names 
+- `<originalFileName>.spec.<ext>`
+
+For a detailed explanation fo the spec files structure go to [Specs](#specs)
+
 ### HTML Files [.html]
-Templates should be used only for custom html for third party plugins of reusable "components" outside of angular's symbol scope, like modals.
+Templates should be used only for custom html for third party plugins of reusable "components" outside of angular's symbol 
+scope, like modals.
 - Components: `<ypComponentName>.component.html`
 - Directives: `<ypDirectiveName>.directive.html`
 - Layout: `<fileName>.html`
@@ -533,5 +541,68 @@ class ViewingManagerService {
 ### Providers
 
 - Provider classes (or functions) should be named `<providerName>Provider`.
+
+**[⬆ back to top](#table-of-contents)**
+
+## Specs
+
+The general structure of a spec file will look like this:
+
+```js
+(function() {
+    'use strict';
+    /* Describe the component being covered by this spec file.
+    *  Under this approach of one spec file per component there will be just one main describe block 
+    *  for the component being tested
+    */
+    describe('<componentName>', () => {
+
+        // Define variables for the dependencies need to be injected to run the tests, and also for 
+        // general use variables
+        var httpBackend,
+            scope,
+            q,
+            Auth;
+
+        // This beforeEach will be needed for any describe block. It mocks the app
+        beforeEach(angular.mock.module('yopa'));
+
+        // This beforeEach will handle the dependency injection, as well as any mock data you need to create
+        beforeEach(inject((_Auth_, $httpBackend, $q, $rootScope) => {
+
+            httpBackend = $httpBackend;
+            q = $q;
+            scope = $rootScope.$new();
+            Auth = _Auth_;
+
+            var propertyId = 9999;
+
+            var mockResponse = {
+              //...
+            };
+
+        }));
+
+        // Inside the main describe block for the file there will be as many describe blocks as methods 
+        // (or attributes when it applies) are being tested
+        describe("methodName()", () => {
+          // There will be as many `it` blocks as input/output combination are being tested for the method
+          // Each `it` block should be limited to testing one outcome
+          it('should validate discount code', () => {
+            // ...
+            // There will be `expect` expresions. this has a set of `matcher functions` like `toBe`, 'toBeTruthy`
+            // with negation options as well like `not.toBe`
+            expect('<something>').toBe('<expected value>');
+          });
+        });
+
+        // Generally in the afterEach contains only a call to the scope's apply method
+        afterEach(() => {
+            scope.$apply();
+        })
+
+    });
+})();
+```
 
 **[⬆ back to top](#table-of-contents)**
